@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sep-business-service</artifactId>
+        <groupId>com.sep</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <artifactId>sep-user-service</artifactId>
+    <description>用户服务</description>
+
+    <modules>
+        <module>client</module>
+        <module>common</module>
+        <module>server</module>
+    </modules>
+
+    <properties>
+        <order-common.version>1.0.0-SNAPSHOT</order-common.version>
+        <logback-gelf.version>2.0.0</logback-gelf.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sep</groupId>
+                <artifactId>sep-user-common</artifactId>
+                <version>${order-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.siegmar</groupId>
+                <artifactId>logback-gelf</artifactId>
+                <version>${logback-gelf.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -1,0 +1,21 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: sep-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhangkai555/renyentang-config #配置git仓库地址
+          searchPaths: repo #配置仓库路径
+      label: master #配置仓库的分支
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8888/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,bus-refresh
