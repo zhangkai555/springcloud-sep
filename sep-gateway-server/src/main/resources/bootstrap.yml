@@ -6,7 +6,6 @@ spring:
       discovery:
         enabled: true
         serviceId: sep-config-server
-      profile: dev
 eureka:
   client:
     serviceUrl:
