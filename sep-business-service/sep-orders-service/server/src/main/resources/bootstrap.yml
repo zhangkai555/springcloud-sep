@@ -2,11 +2,10 @@ spring:
   cloud:
     config:
       name: order,feign,database,redis,mybatis-plus
-      label: master
+      label: test
       discovery:
         enabled: true
         serviceId: sep-config-server
-      profile: dev
 eureka:
   client:
     serviceUrl:

@@ -9,7 +9,7 @@ spring:
         git:
           uri: https://github.com/zhangkai555/renyentang-config #配置git仓库地址
           searchPaths: repo #配置仓库路径
-      label: master #配置仓库的分支
+      label: test #配置仓库的分支
 eureka:
   client:
     serviceUrl:
