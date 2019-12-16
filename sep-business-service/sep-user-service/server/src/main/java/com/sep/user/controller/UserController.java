@@ -5,6 +5,7 @@ import com.sep.common.model.response.ResponseData;
 import com.sep.order.client.OrderClient;
 import com.sep.order.common.OrderInput;
 import com.sep.order.common.OrderOutput;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RequestMapping("user")
 @RestController
+@Api(value = "用户相关API", description = "用户相关API")
 public class UserController extends BaseController{
 
     @Autowired

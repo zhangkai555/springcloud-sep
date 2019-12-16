@@ -11,6 +11,8 @@ import com.sep.order.dto.OrderDto;
 import com.sep.order.model.Order;
 import com.sep.order.service.OrderService;
 import com.sep.order.vo.OrderVo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -26,12 +28,14 @@ import java.util.List;
  */
 @RequestMapping("order")
 @RestController
+@Api(value = "订单相关API", tags = {"订单相关API"})
 public class OrderController extends BaseController{
 
     @Autowired
     private OrderService orderService;
 
     @PostMapping(value = "/getOrdersByUserId")
+    @ApiOperation(value = "根据用户查询订单分页信息", httpMethod = "POST")
     public ResponseData<IPage<OrderVo>> getAllOrdersByUserId(@RequestBody OrderDto orderDto){
         if(orderDto.getUserId() == null){
             return ResponseData.ERROR("用户id为空");
@@ -62,6 +66,7 @@ public class OrderController extends BaseController{
      * @return
      */
     @PostMapping(value = "/getOrderById")
+    @ApiOperation(value = "根据id查询订单信息", httpMethod = "POST")
     public OrderOutput getOrderById(@RequestBody OrderInput orderInput){
         Order order = orderService.getById(orderInput.getId());
         if(order != null){
